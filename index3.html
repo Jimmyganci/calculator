@@ -62,14 +62,14 @@
         grid-area: 5/2/6/3;
       }
       .colorChange {
-        animation: click 1s ease;
+        animation: click 0.1s ease;
       }
       @keyframes click {
-        from {
-          background: rgba(32, 178, 171);
+        to {
+          background: rgba(32, 178, 171, 0.589);
         }
         to {
-          background: white;
+          background: rgba(32, 178, 171);
         }
       }
     </style>
@@ -78,23 +78,23 @@
     <div class="container">
       <div class="calculate">
         <input type="number" id="numberInput" />
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>.</button>
-        <button id="zero">0</button>
-        <button id="add">+</button>
-        <button id="sous">-</button>
-        <button id="multi">*</button>
-        <button id="divise">/</button>
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button value=".">.</button>
+        <button id="zero" value="0">0</button>
+        <button id="add" value="+">+</button>
+        <button id="sous" value="-">-</button>
+        <button id="multi" value="*">*</button>
+        <button id="divise" value="/">/</button>
         <button id="clear">C</button>
-        <button id="equal">=</button>
+        <button id="equal">Calcul moi ça!</button>
       </div>
     </div>
     <script src="/index3.js"></script>

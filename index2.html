@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .game {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 75vh;
+        margin: 0 auto;
+        font-size: 2em;
+      }
+      input {
+        text-align: center;
+        padding: 3rem;
+        font-size: 0.7em;
+      }
+      .number {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game">
+      <div class="name">
+        <label for="Name">Entrez votre nom</label>
+        <input type="text" name="name" placeholder="Name:" id="name" />
+        <button id="button">OK</button>
+      </div>
+      <div class="number">
+        <label for="Name">Entrez un numéro</label>
+        <input type="number" name="number" placeholder="Number" id="number" />
+        <p id="return"></p>
+        <button id="play">PLAY</button>
+      </div>
+    </div>
+
+    <script>
+      let retry = true;
+      let playerNames;
+      document.getElementById("button").addEventListener("click", () => {
+        playerNames = document.getElementById("name").value;
+
+        if (playerNames != "") {
+          document.querySelector(".number").style.display = "block";
+          document.querySelector(".name").style.display = "none";
+        }
+        console.log(playerNames);
+      });
+
+      //   let playerNumber;
+      document.getElementById("play").addEventListener("click", () => {
+        while (retry == true) {
+          playerNumber = document.getElementById("number").value;
+          const randomNumber = Math.floor(Math.random() * 100) + 1;
+          console.log(randomNumber);
+          while (true) {
+            function playerGame(number, random) {
+              if (number == random) {
+                //   alert(`${playerNames} wins`);
+                document.getElementById(
+                  "return"
+                ).innerHTML = `${playerNames} wins`;
+                retry = false;
+                return retry;
+                // break;
+              } else if (number < random) {
+                //   alert("It is more");
+                document.getElementById("return").innerHTML = "It is more!";
+                number = "";
+                return number;
+                //   number = prompt("It is more! Try Again");
+              } else {
+                //   alert("It is less!");
+                document.getElementById("return").innerHTML = "It is less!";
+                //   number = prompt("It is less! Try Again");
+                number = "";
+                return number;
+              }
+            }
+            playerGame(playerNumber, randomNumber);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
