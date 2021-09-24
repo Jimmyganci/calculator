@@ -38,10 +38,10 @@
         border: 1px solid lightseagreen;
         background: lightyellow;
         outline: none;
+        text-align: end;
       }
       #equal {
         grid-area: 6/1/7/5;
-        background: lightcyan;
       }
       #add {
         grid-area: 5 /4/ 6/5;
@@ -69,7 +69,7 @@
   <body>
     <div class="container">
       <div class="calculate">
-        <input type="number" id="numberInput" />
+        <input type="text" id="numberInput" />
         <button value="7">7</button>
         <button value="8">8</button>
         <button value="9">9</button>
@@ -81,10 +81,10 @@
         <button value="3">3</button>
         <button value=".">.</button>
         <button id="zero" value="0">0</button>
-        <button id="add" value="+">+</button>
-        <button id="sous" value="-">-</button>
-        <button id="multi" value="*">*</button>
-        <button id="divise" value="/">/</button>
+        <button id="add" value=" + ">+</button>
+        <button id="sous" value=" - ">-</button>
+        <button id="multi" value=" * ">*</button>
+        <button id="divise" value=" / ">/</button>
         <button id="clear">C</button>
         <button id="equal">Calcul moi ça!</button>
       </div>
